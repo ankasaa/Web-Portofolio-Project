@@ -1,0 +1,302 @@
+* {
+  margin: 0; /* Menghapus margin dari semua elemen */
+  padding: 0; /* Menghapus padding dari semua elemen */
+  box-sizing: border-box; /* Memastikan padding dan border dihitung dalam ukuran elemen */
+  scroll-behavior: smooth; /* Menambahkan efek scroll halus */
+}
+body {
+  font-family: Arial, sans-serif; /* Menetapkan font keluarga untuk seluruh halaman */
+  color: #1e1e1e; /* Menetapkan warna teks putih */
+  background: #1e1e1e; /* Menetapkan warna latar belakang gelap */
+}
+.header {
+  width: 100%; /* Lebar header 100% dari lebar viewport */
+  position: fixed; /* Posisi tetap di atas halaman */
+  top: 0; /* Menempatkan di atas halaman */
+  left: 0; /* Menempatkan di sebelah kiri halaman */
+  z-index: 1000; /* Menjamin header tetap di atas elemen lainnya */
+  background-color: transparent; /* Latar belakang transparan */
+  transition: background-color 0.3s ease; /* Efek transisi pada perubahan warna latar belakang */
+}
+/* Navbar */
+.navbar {
+  display: flex; /* Menggunakan flexbox untuk susunan elemen navbar */
+  justify-content: space-between; /* Memberikan jarak antara elemen navbar */
+  align-items: center; /* Memusatkan elemen secara vertikal */
+  padding: 30px 20px; /* Memberikan padding pada navbar */
+  color: white; /* Menetapkan warna teks putih */
+  position: relative; /* Menetapkan posisi relatif */
+  top: 0; /* Menempatkan navbar di atas halaman */
+  width: 100%; /* Lebar navbar 100% dari lebar viewport */
+  transition: all 0.3s ease; /* Efek transisi untuk semua properti */
+  background-color: #1e1e1e;
+}
+
+/* Animasi sticky navbar */
+.sticky {
+  background-color: rgb(
+    149 149 149 / 14%
+  ); /* Mengubah warna latar belakang saat navbar menjadi sticky */
+  transform: translateY(0); /* Mengatur posisi navbar saat sticky */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Menambahkan bayangan di bawah navbar */
+}
+
+/* Gaya logo navbar */
+.navbar-logo img {
+  width: 50px; /* Lebar gambar logo */
+  height: auto; /* Menjaga rasio aspek gambar */
+  max-height: 50px; /* Menetapkan tinggi maksimum logo */
+}
+
+/* Daftar tautan navigasi */
+.nav-links {
+  list-style: none; /* Menghapus penanda daftar */
+  display: flex; /* Menggunakan flexbox untuk susunan horizontal */
+}
+
+.nav-links li {
+  margin: 0 15px; /* Memberikan jarak antara item navigasi */
+}
+
+.nav-links a {
+  color: white; /* Menetapkan warna teks tautan menjadi putih */
+  text-decoration: none; /* Menghapus garis bawah dari tautan */
+  font-size: 18px; /* Menetapkan ukuran font */
+  position: relative; /* Menetapkan posisi relatif untuk efek garis bawah */
+}
+
+.nav-links a::after {
+  content: ""; /* Menambahkan konten kosong untuk efek garis bawah */
+  position: absolute; /* Posisi absolut untuk garis bawah */
+  width: 100%; /* Garis bawah sepanjang lebar tautan */
+  height: 2px; /* Ketebalan garis bawah */
+  bottom: -2px; /* Jarak garis dari teks */
+  left: 0; /* Posisi garis di kiri */
+  background-color: white; /* Warna garis bawah */
+  transform: scaleX(0); /* Menyembunyikan garis secara default */
+  transform-origin: bottom right; /* Menentukan titik asal animasi transformasi */
+  transition: transform 0.3s ease; /* Efek transisi pada transformasi */
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1); /* Menampilkan garis bawah saat hover */
+  transform-origin: bottom left; /* Mengubah titik asal animasi saat hover */
+}
+/* Efek sticky */
+.sticky {
+  background-color: rgb(
+    149 149 149 / 13%
+  ); /* Warna latar belakang sticky navbar */
+  backdrop-filter: blur(10px); /* Efek blur pada latar belakang saat sticky */
+  transform: translateY(0); /* Reset transformasi */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Bayangan navbar saat sticky */
+}
+
+/* Content home */
+
+.container-me {
+  display: flex;
+  height: 646px;
+  padding: 10px 100px;
+  align-items: center;
+  gap: 50px;
+  flex-shrink: 0;
+  align-self: stretch;
+  border: 1px solid #000;
+  background: #fff;
+}
+
+.left-content {
+  display: flex;
+  width: 585px;
+  height: 484px;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border: 1px solid #000;
+}
+.text-home {
+  color: #000;
+  font-family: Inter;
+  font-size: 55px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.text-class {
+  color: #000;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.text-p {
+  width: 544px;
+  height: 72px;
+  color: #000;
+  font-family: Inter;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.btn-home {
+  display: flex;
+  width: 163px;
+  height: 48px;
+  padding: 10px 15px;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  border-radius: 10px;
+  border: 1px solid #000;
+}
+.right-content {
+  display: flex;
+  /* padding: 10px; */
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex: 1 0 0;
+  border: 1px solid #000;
+}
+.right-content img {
+  width: 350px;
+  height: 484px;
+}
+
+/* A */
+.container-about {
+  display: flex;
+  height: 646px;
+  padding: 10px 100px;
+  align-items: center;
+  gap: 50px;
+  flex-shrink: 0;
+  align-self: stretch;
+  border: 1px solid #000;
+  background: #fff;
+}
+.left-about {
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex: 1 0 0;
+  border: 1px solid #000;
+}
+.left-about img {
+  width: 350px;
+  height: 484px;
+}
+
+/* P */
+.container-project {
+  display: flex;
+  height: 646px;
+  padding: 10px 100px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+  flex-shrink: 0;
+  align-self: stretch;
+  border: 1px solid #000;
+  background: #fff;
+}
+.top-project {
+  display: flex;
+  height: 132px;
+  padding: 10px;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  align-self: stretch;
+  border: 1px solid #000;
+}
+.text-h3 {
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.text-h1 {
+  color: #000;
+  font-family: Inter;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.row-project {
+  display: flex;
+  height: 419px;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 20px;
+  flex-shrink: 0;
+  align-self: stretch;
+  flex-wrap: wrap;
+  border: 1px solid #000;
+}
+.catalog-project {
+  display: flex;
+  width: 329px;
+  height: 282px;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #000;
+}
+.catalog-project img {
+  height: 202px;
+  flex-shrink: 0;
+  align-self: stretch;
+  border: 1px solid #000;
+}
+.text-catalog {
+  display: flex;
+  height: 60px;
+  padding: 10px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  align-self: stretch;
+  border: 1px solid #000;
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* F */
+footer {
+  display: flex;
+  height: 84px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  align-self: stretch;
+  color: #000;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border: 1px solid black;
+  background: white;
+}
